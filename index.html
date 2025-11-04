@@ -111,17 +111,14 @@
         }
 
         .principles-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
         }
 
         .principle-card {
             text-align: center;
             padding: 2rem;
-            flex: 1 1 300px;
-            max-width: 350px;
         }
 
         .principle-icon {
@@ -148,9 +145,8 @@
         }
 
         .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             counter-reset: step;
         }
@@ -162,8 +158,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             position: relative;
             text-align: center;
-            flex: 1 1 280px;
-            max-width: 350px;
         }
 
         .process-step-image {
@@ -197,9 +191,8 @@
         }
 
         .research-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
         }
 
@@ -209,8 +202,6 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
-            flex: 1 1 350px;
-            max-width: 450px;
         }
 
         .research-card:hover {
@@ -272,17 +263,14 @@
         }
 
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-top: 4rem;
         }
 
         .contact-item {
             text-align: center;
-            flex: 1 1 250px;
-            max-width: 300px;
         }
 
         .contact-icon {
@@ -309,23 +297,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .principles-grid,
-            .process-steps,
-            .research-grid,
-            .contact-info {
-                gap: 2rem;
-            }
-            
-            .principle-card,
-            .process-step,
-            .research-card,
-            .contact-item {
-                flex: 1 1 calc(50% - 2rem);
-                max-width: calc(50% - 2rem);
-            }
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
@@ -348,12 +319,11 @@
                 font-size: 2rem;
             }
 
-            .principle-card,
-            .process-step,
-            .research-card,
-            .contact-item {
-                flex: 1 1 100%;
-                max-width: 100%;
+            .principles-grid,
+            .process-steps,
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .process-step-image {
